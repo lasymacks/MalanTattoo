@@ -1,0 +1,28 @@
+.title-container {
+  position: relative;
+  width: 509px;
+  height: 136px;
+  margin: 0 auto 40px auto;
+
+  &__img {
+    position: absolute;
+    top: -7px;
+    left: -10px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 136px;
+  }
+
+  &__background-title-text {
+    position: absolute;
+    left: 368px;
+    top: 108px;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 44px;
+    color: #2235D1;
+  }
+}
