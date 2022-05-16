@@ -8,15 +8,11 @@ interface IWrrapper {
 
 const Wrapper = ({ children, className }: IWrrapper) => {
   const Section = styled.section`
-  padding: 0 150px;
-  ${className}
-  `
+    padding: 0 150px;
+    ${className}
+  `;
 
-  return (
-    <Section>
-      {children}
-    </Section>
-  );
-}
+  return <Section>{children}</Section>;
+};
 
 export default Wrapper;

@@ -4,6 +4,7 @@ import PresentationBlock from "../presentationBlock";
 import styled from "styled-components";
 import AboutMe from "../aboutMe";
 import MyWorks from "../myWorks";
+import Certificate from "../certificate";
 
 const App = () => {
   const Container = styled.div`
@@ -18,6 +19,7 @@ const App = () => {
       <PresentationBlock />
       <AboutMe />
       <MyWorks />
+      <Certificate />
     </Container>
   );
 };
