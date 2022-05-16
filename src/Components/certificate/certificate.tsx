@@ -1,38 +1,38 @@
 import React from "react";
-import styled from "styled-components";
 import Subtitle from "../subtitle";
 import Wrapper from "../wrapper";
+import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const AboutMe = () => {
-  const BlueText = styled.span`
+const Certificate = () => {
+  const WhiteText = styled.span`
     overflow: hidden;
     font-weight: 400;
     font-size: 96px;
     line-height: 102px;
-    color: #2235d1;
+    color: #fff;
     text-shadow: none;
   `;
-  const IndentedWord = styled.span`
+  const WhiteIndentedText = styled.span`
     display: inline-block;
     margin-left: 30px;
   `;
-  const Container = styled.div`
-    font-weight: 400;
+  const TransparentText = styled.span`
+    // text-shadow: 1px 0 black, 0 1px black, -1px 0 black, 0 -1px black;
+    mix-blend-mode: multiply;
+  `;
+  const CertificateContainer = styled.div`
+    background-image: url(${require("./img/background.png")});
+    background-size: contain;
+    background-position: center;
+    width: 1440px;
+    height: 914px;
+  `;
+  const TextWrapper = styled.div`
+    font-weight: 500;
     font-size: 20px;
     line-height: 24px;
-    display: flex;
-    position: relative;
-    margin-bottom: 200px;
-  `;
-  const Img = styled.img`
-    margin-right: 35px;
-  `;
-  const BackgroundImg = styled.img `
-    position: absolute;
-    z-index: -1;
-    left: -145px;
-    bottom: -160px;
+    color: #fff;
   `;
 
   return (
@@ -42,14 +42,15 @@ const AboutMe = () => {
       transition={{ ease: "easeOut", duration: 1 }}
       viewport={{ once: true }}
     >
-      <Subtitle>
-        <IndentedWord>ABOUT ME</IndentedWord> ABOUT ME ABO UT ME{" "}
-        <BlueText>ABOUT ME</BlueText> ABOUT ME
-      </Subtitle>
-      <Wrapper>
-        <Container>
-          <Img src={require("./img/myPhoto.png")}></Img>
-          <div>
+      <CertificateContainer>
+        <Subtitle>
+          <WhiteIndentedText>CERTIFICATE</WhiteIndentedText>{" "}
+          <TransparentText>CERTIFICATE C</TransparentText>
+          <TransparentText> CERTIFICATE CERTIFICATE</TransparentText>{" "}
+          <WhiteText>CE</WhiteText>
+        </Subtitle>
+        <Wrapper>
+          <TextWrapper>
             <p>Привет, я Полина, твой тату-мастер.</p>
             <p>
               Мой опыт в создании тату - 3 года. Я работаю в уютной и комфортной
@@ -69,12 +70,11 @@ const AboutMe = () => {
               Всегда смогу по референсам создать эскиз, в котором будут отражены
               мой стиль и частичка вас.
             </p>
-          </div>
-          <BackgroundImg src={require("./img/background.png")}></BackgroundImg>
-        </Container>
-      </Wrapper>
+          </TextWrapper>
+        </Wrapper>
+      </CertificateContainer>
     </motion.div>
   );
 };
 
-export default AboutMe;
+export default Certificate;

@@ -21,6 +21,7 @@ const Button = ({ text }: IButton) => {
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
+    cursor: pointer;
   `;
   const SecondBorder = styled.div`
     position: absolute;
@@ -32,6 +33,7 @@ const Button = ({ text }: IButton) => {
     border-radius: 50%;
     transform: rotate(-10deg);
     transition: transform 0.25s ease-in-out, outline 0.1s ease-in-out;
+    cursor: pointer;
     &:hover {
       transform: rotate(0);
     }

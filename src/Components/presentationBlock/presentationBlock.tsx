@@ -66,6 +66,7 @@ const PresentationBlock = () => {
       initial={{ y: 500, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 1 }}
+      viewport={{ once: true }}
     >
       <Wrapper>
         <Title />
