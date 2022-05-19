@@ -5,6 +5,8 @@ import styled from "styled-components";
 import AboutMe from "../aboutMe";
 import MyWorks from "../myWorks";
 import Certificate from "../certificate";
+import Important from "../important";
+import Price from "../price";
 
 const App = () => {
   const Container = styled.div`
@@ -20,6 +22,8 @@ const App = () => {
       <AboutMe />
       <MyWorks />
       <Certificate />
+      <Important />
+      <Price />
     </Container>
   );
 };

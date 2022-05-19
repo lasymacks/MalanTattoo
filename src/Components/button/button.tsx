@@ -3,11 +3,13 @@ import styled from "styled-components";
 
 interface IButton {
   text: string;
+  style?: string;
 }
 
-const Button = ({ text }: IButton) => {
+const Button = ({ text, style }: IButton) => {
   const Container = styled.div`
     position: relative;
+    ${style}
   `;
   const Button = styled.button`
     left: 0;

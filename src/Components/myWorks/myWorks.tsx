@@ -161,7 +161,7 @@ const MyWorks = () => {
         <IndentedWord>MY WORKS</IndentedWord> <BlueText>MY WORKS</BlueText> MY
         <BlueText> WORKS</BlueText> MY WORKS MY WOR
       </Subtitle>
-      <Wrapper className={'margin-bottom: 85px'}>
+      <Wrapper style={'margin-bottom: 85px'}>
         <Container>
           <List>
             <Item>

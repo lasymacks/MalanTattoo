@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 interface IWrrapper {
   children: ReactNode;
-  className?: string;
+  style?: string;
 }
 
-const Wrapper = ({ children, className }: IWrrapper) => {
+const Wrapper = ({ children, style }: IWrrapper) => {
   const Section = styled.section`
     padding: 0 150px;
-    ${className}
+    ${style}
   `;
 
   return <Section>{children}</Section>;
