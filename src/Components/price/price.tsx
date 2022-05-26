@@ -17,14 +17,6 @@ const Price = () => {
   const IndentedBlueWord = styled(BlueText)`
     margin-left: 30px;
   `;
-  const PriceItemSubtittle = styled.h3`
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 44px;
-    color: rgba(0, 0, 0, 0.7);
-    margin: 0;
-    padding: 18px 0;
-  `;
 
   return (
     <motion.div
@@ -38,22 +30,70 @@ const Price = () => {
         <BlueText>PRICE</BlueText> PRICE PRIC
       </Subtitle>
       <Wrapper style={"margin-bottom: 150px; padding-bottom: 500px;"}>
-        <Accordion>
-          <PriceItemSubtittle>Консультация</PriceItemSubtittle>
+        <Accordion textTitle="Консультация">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          exercitationem deserunt beatae in minima sapiente illo eos sed
+          cupiditate reprehenderit saepe perspiciatis nam doloremque blanditiis,
+          libero reiciendis facilis omnis. Voluptatum. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Consectetur exercitationem deserunt
+          beatae in minima sapiente illo eos sed cupiditate reprehenderit saepe
+          perspiciatis nam doloremque blanditiis, libero reiciendis facilis
+          omnis. Voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Consectetur exercitationem deserunt beatae in minima sapiente
+          illo eos sed cupiditate reprehenderit saepe perspiciatis nam
+          doloremque blanditiis, libero reiciendis facilis omnis. Voluptatum.
         </Accordion>
-        <Accordion>
-          <PriceItemSubtittle>
-            Разработка индивидуального эскиза
-          </PriceItemSubtittle>
+        <Accordion textTitle="Разработка индивидуального эскиза">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          exercitationem deserunt beatae in minima sapiente illo eos sed
+          cupiditate reprehenderit saepe perspiciatis nam doloremque blanditiis,
+          libero reiciendis facilis omnis. Voluptatum. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Consectetur exercitationem deserunt
+          beatae in minima sapiente illo eos sed cupiditate reprehenderit saepe
+          perspiciatis nam doloremque blanditiis, libero reiciendis facilis
+          omnis. Voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Consectetur exercitationem deserunt beatae in minima sapiente
+          illo eos sed cupiditate reprehenderit saepe perspiciatis nam
+          doloremque blanditiis, libero reiciendis facilis omnis. Voluptatum.
         </Accordion>
-        <Accordion>
-          <PriceItemSubtittle>Коррекция моей работы</PriceItemSubtittle>
+        <Accordion textTitle="Коррекция моей работы">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          exercitationem deserunt beatae in minima sapiente illo eos sed
+          cupiditate reprehenderit saepe perspiciatis nam doloremque blanditiis,
+          libero reiciendis facilis omnis. Voluptatum. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Consectetur exercitationem deserunt
+          beatae in minima sapiente illo eos sed cupiditate reprehenderit saepe
+          perspiciatis nam doloremque blanditiis, libero reiciendis facilis
+          omnis. Voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Consectetur exercitationem deserunt beatae in minima sapiente
+          illo eos sed cupiditate reprehenderit saepe perspiciatis nam
+          doloremque blanditiis, libero reiciendis facilis omnis. Voluptatum.
         </Accordion>
-        <Accordion>
-          <PriceItemSubtittle>Тату</PriceItemSubtittle>
+        <Accordion textTitle="Тату">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          exercitationem deserunt beatae in minima sapiente illo eos sed
+          cupiditate reprehenderit saepe perspiciatis nam doloremque blanditiis,
+          libero reiciendis facilis omnis. Voluptatum. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Consectetur exercitationem deserunt
+          beatae in minima sapiente illo eos sed cupiditate reprehenderit saepe
+          perspiciatis nam doloremque blanditiis, libero reiciendis facilis
+          omnis. Voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Consectetur exercitationem deserunt beatae in minima sapiente
+          illo eos sed cupiditate reprehenderit saepe perspiciatis nam
+          doloremque blanditiis, libero reiciendis facilis omnis. Voluptatum.
         </Accordion>
-        <Accordion>
-          <PriceItemSubtittle>Подарочный сертификат</PriceItemSubtittle>
+        <Accordion textTitle="Подарочный сертификат">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          exercitationem deserunt beatae in minima sapiente illo eos sed
+          cupiditate reprehenderit saepe perspiciatis nam doloremque blanditiis,
+          libero reiciendis facilis omnis. Voluptatum. Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Consectetur exercitationem deserunt
+          beatae in minima sapiente illo eos sed cupiditate reprehenderit saepe
+          perspiciatis nam doloremque blanditiis, libero reiciendis facilis
+          omnis. Voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Consectetur exercitationem deserunt beatae in minima sapiente
+          illo eos sed cupiditate reprehenderit saepe perspiciatis nam
+          doloremque blanditiis, libero reiciendis facilis omnis. Voluptatum.
         </Accordion>
       </Wrapper>
     </motion.div>

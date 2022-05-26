@@ -1,137 +1,151 @@
 import { motion } from "framer-motion";
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import styled from "styled-components";
+import { CSSTransition, Transition } from "react-transition-group";
 
 interface IAccordion {
   children: ReactNode;
+  textTitle?: string;
 }
 
-const Accordion = ({ children }: IAccordion) => {
+const Accordion = ({ children, textTitle }: IAccordion) => {
   const [isActive, setIsActive] = useState(false);
-
-  const AccordionContainer = styled.div`
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    margin-bottom: 18px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-  `;
-  const AccordionContentWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  `;
-  const AccordinButton = styled.button`
-    border: none;
-    background-color: transparent;
-    width: 41px;
-    height: 41px;
-  `;
-  const AccordionChildItem = styled.div`
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    padding-bottom: 20px;
-  `;
 
   const AccordionContainerHandler = () => {
     setIsActive((prevState) => !prevState);
   };
 
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     setIsActive((prev) => !prev);
+  //   }, 3000);
+  // }, []);
+
   return (
     <AccordionContainer onClick={AccordionContainerHandler}>
       <AccordionContentWrapper>
-        {children}
-        {isActive && (
-          <motion.div
-            initial={{ rotate: 0 }}
-            animate={{ rotate: 45 }}
-            transition={{ ease: "easeOut", duration: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <AccordinButton>
-              <svg
-                width="42"
-                height="41"
-                viewBox="0 0 42 41"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <line
-                  y1="-1.5"
-                  x2="40.251"
-                  y2="-1.5"
-                  transform="matrix(1 0 0.000819435 1 1 21.4553)"
-                  stroke="black"
-                  stroke-opacity="0.7"
-                  stroke-width="3"
-                />
-                <line
-                  x1="21.5044"
-                  y1="41"
-                  x2="21.5044"
-                  stroke="black"
-                  stroke-opacity="0.7"
-                  stroke-width="3"
-                />
-              </svg>
-            </AccordinButton>
-          </motion.div>
-        )}
-        {!isActive && (
-          <AccordinButton>
-            <svg
-              width="42"
-              height="41"
-              viewBox="0 0 42 41"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line
-                y1="-1.5"
-                x2="40.251"
-                y2="-1.5"
-                transform="matrix(1 0 0.000819435 1 1 21.4553)"
-                stroke="black"
-                stroke-opacity="0.7"
-                stroke-width="3"
-              />
-              <line
-                x1="21.5044"
-                y1="41"
-                x2="21.5044"
-                stroke="black"
-                stroke-opacity="0.7"
-                stroke-width="3"
-              />
-            </svg>
-          </AccordinButton>
-        )}
+        {textTitle}
+        <CSSTransition in={isActive} timeout={300} classNames="rotate">
+          {(state) => (
+            <>
+              <p>State: {state}</p>
+              <AccordinButton>
+                <svg
+                  width="42"
+                  height="41"
+                  viewBox="0 0 42 41"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    y1="-1.5"
+                    x2="40.251"
+                    y2="-1.5"
+                    transform="matrix(1 0 0.000819435 1 1 21.4553)"
+                    stroke="black"
+                    stroke-opacity="0.7"
+                    stroke-width="3"
+                  />
+                  <line
+                    x1="21.5044"
+                    y1="41"
+                    x2="21.5044"
+                    stroke="black"
+                    stroke-opacity="0.7"
+                    stroke-width="3"
+                  />
+                </svg>
+              </AccordinButton>
+            </>
+          )}
+        </CSSTransition>
       </AccordionContentWrapper>
-      {isActive && (
-        <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: "auto", opacity: 1 }}
-          transition={{ ease: "easeOut", duration: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <AccordionChildItem>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-            exercitationem deserunt beatae in minima sapiente illo eos sed
-            cupiditate reprehenderit saepe perspiciatis nam doloremque
-            blanditiis, libero reiciendis facilis omnis. Voluptatum. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Consectetur
-            exercitationem deserunt beatae in minima sapiente illo eos sed
-            cupiditate reprehenderit saepe perspiciatis nam doloremque
-            blanditiis, libero reiciendis facilis omnis. Voluptatum. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Consectetur
-            exercitationem deserunt beatae in minima sapiente illo eos sed
-            cupiditate reprehenderit saepe perspiciatis nam doloremque
-            blanditiis, libero reiciendis facilis omnis. Voluptatum.
-          </AccordionChildItem>
-        </motion.div>
-      )}
+      <CSSTransition
+        in={isActive}
+        timeout={300}
+        unmountOnExit
+        classNames="fade"
+      >
+        <AccordionChildItem>{children}</AccordionChildItem>
+      </CSSTransition>
     </AccordionContainer>
   );
 };
+
+// Можешь выносить сюда, можешь в отдельный файл, но в теле компонента не прописывай,
+// потому что при ререндере эти styled-компоненты заново создаются :) Вынеси это во всех остальных компонентах
+const AccordionContainer = styled.div`
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  margin-bottom: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+`;
+
+const AccordionContentWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 44px;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+  padding: 18px 0;
+`;
+
+const AccordinButton = styled.button`
+  border: none;
+  background-color: transparent;
+  width: 41px;
+  height: 41px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  &.rotate-enter {
+    transform: rotate(0);
+  }
+
+  &.rotate-enter-active {
+    transform: rotate(45deg);
+  }
+
+  &.rotate-exit {
+    transform: rotate(45deg);
+  }
+
+  &.rotate-exit-active {
+    transform: rotate(0);
+  }
+`;
+
+const AccordionChildItem = styled.div`
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  padding-bottom: 20px;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  &.fade-enter {
+    opacity: 0;
+    max-height: 0px;
+  }
+
+  &.fade-enter-active {
+    opacity: 1;
+    color: red;
+    max-height: 500px;
+  }
+
+  &.fade-exit {
+    opacity: 1;
+    color: red;
+    max-height: 500px;
+  }
+
+  &.fade-exit-active {
+    opacity: 0;
+    max-height: 0px;
+  }
+`;
 
 export default Accordion;
