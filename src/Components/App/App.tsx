@@ -7,6 +7,7 @@ import MyWorks from "../myWorks";
 import Certificate from "../certificate";
 import Important from "../important";
 import Price from "../price";
+import Workflow from "../workflow";
 
 const App = () => {
   const Container = styled.div`
@@ -22,6 +23,7 @@ const App = () => {
       <AboutMe />
       <MyWorks />
       <Certificate />
+      <Workflow />
       <Important />
       <Price />
     </Container>

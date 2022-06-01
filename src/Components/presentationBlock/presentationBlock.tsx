@@ -65,7 +65,7 @@ const PresentationBlock = () => {
     <motion.div
       initial={{ y: 500, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeOut", duration: 1 }}
+      transition={{ ease: "easeOut", duration: 0.7 }}
       viewport={{ once: true }}
     >
       <Wrapper>
