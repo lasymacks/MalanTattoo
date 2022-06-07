@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Subtitle from "../subtitle";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Carousel from "../carousel";
 import Wrapper from "../wrapper";
+import Button from "../button";
+import modalWindow from "../modalWindow";
+import ModalWindow from "../modalWindow";
+import { createPortal } from "react-dom";
 
-interface SynteticEvent<T> {
+export interface SynteticEvent<T> {
   currentTarget: EventTarget & T;
+  target: EventTarget;
 }
 
 const MyWorks = () => {
@@ -24,6 +29,10 @@ const MyWorks = () => {
       name: "Эскизы",
     },
   ]);
+  const [isModalActive, setIsModalActive] = useState(false);
+  const modalRoot = document.getElementById("modal-root");
+
+  // Need delete this constant after create a server
   const images = [
     {
       label: "Тату",
@@ -85,54 +94,86 @@ const MyWorks = () => {
       }
       return acc;
     }, [] as string[]);
-    console.log(activeButton, currentImages);
     return currentImages.map((item) => (
       <CarouselImg src={require(`${item}`)}></CarouselImg>
     ));
   };
 
+  const modalWindowHandler = ({
+    target,
+    currentTarget,
+  }: SynteticEvent<HTMLDivElement>) => {
+    console.log(target, currentTarget);
+    console.log(target === currentTarget);
+    if (target === currentTarget) {
+      setIsModalActive((prev) => !prev);
+    }
+  };
+
   return (
-    <motion.div
-      initial={{ y: 500, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeOut", duration: 0.7 }}
-      viewport={{ once: true }}
-    >
-      <Subtitle>
-        <IndentedWord>MY WORKS</IndentedWord> <BlueText>MY WORKS</BlueText> MY
-        <BlueText> WORKS</BlueText> MY WORKS MY WOR
-      </Subtitle>
-      <Wrapper style={"margin-bottom: 85px"}>
-        <Container>
-          <List>
-            {activeButtons.map(({ value, name }, index) => (
-              <>
-                <Item>
-                  {value ? (
-                    <ListButtonActive onClick={(e) => buttonHandler(e)}>
-                      {name}
-                    </ListButtonActive>
-                  ) : (
-                    <ListButton onClick={(e) => buttonHandler(e)}>
-                      {name}
-                    </ListButton>
-                  )}
-                </Item>
-                {activeButtons.length > index + 1 && (
+    <>
+      <motion.div
+        initial={{ y: 500, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeOut", duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <Subtitle>
+          <IndentedWord>MY WORKS</IndentedWord> <BlueText>MY WORKS</BlueText> MY
+          <BlueText> WORKS</BlueText> MY WORKS MY WOR
+        </Subtitle>
+        <Wrapper style={"margin-bottom: 85px; position: relative;"}>
+          <Container>
+            <List>
+              {activeButtons.map(({ value, name }, index) => (
+                <>
                   <Item>
-                    <img src={require("./img/star.png")}></img>
+                    {value ? (
+                      <ListButtonActive onClick={(e) => buttonHandler(e)}>
+                        {name}
+                      </ListButtonActive>
+                    ) : (
+                      <ListButton onClick={(e) => buttonHandler(e)}>
+                        {name}
+                      </ListButton>
+                    )}
                   </Item>
-                )}
-              </>
-            ))}
-          </List>
-        </Container>
-        <Carousel>{showCarouselContent()}</Carousel>
-      </Wrapper>
-    </motion.div>
+                  {activeButtons.length > index + 1 && (
+                    <Item>
+                      <img src={require("./img/star.png")}></img>
+                    </Item>
+                  )}
+                </>
+              ))}
+            </List>
+          </Container>
+          <Carousel>{showCarouselContent()}</Carousel>
+          <Button
+            text="Посмотреть все"
+            style="position: absolute; right: 170px; bottom: 25px;"
+            onClick={modalWindowHandler}
+          />
+          {isModalActive &&
+            createPortal(
+              <ModalWindow
+                style={stylesForModal}
+                closeFunction={modalWindowHandler}
+              >
+                <h1>test</h1>
+              </ModalWindow>,
+              modalRoot as Element
+            )}
+        </Wrapper>
+      </motion.div>
+    </>
   );
 };
 
+const stylesForModal = {
+  backgroundColor: "#E5E5E5",
+  width: "1000px",
+  height: "800px",
+};
 const BlueText = styled.span`
   overflow: hidden;
   font-weight: 400;
@@ -155,7 +196,7 @@ const List = styled.ul`
 `;
 const Item = styled.li`
   margin-right: 30px;
-  
+
   &:last-child {
     margin-right: 0;
   }

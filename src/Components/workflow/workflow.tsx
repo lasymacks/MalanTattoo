@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Consultation from "../consultation";
 import Correction from "../correction";
 import DesignDevelopment from "../designDevelopment";
+import Place from "../place";
 import Session from "../session";
 import Subtitle from "../subtitle";
 import Wrapper from "../wrapper";
@@ -57,16 +58,64 @@ const Workflow = () => {
     }, "");
     switch (activeButton) {
       case "Консультация":
-        return <Consultation />;
+        return (
+          <motion.div
+            initial={{ x: 350, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <Consultation />
+          </motion.div>
+        );
 
       case "Разработка эскиза":
-        return <DesignDevelopment />;
+        return (
+          <motion.div
+            initial={{ x: 350, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <DesignDevelopment />
+          </motion.div>
+        );
 
       case "Коррекция":
-        return <Correction />;
+        return (
+          <motion.div
+            initial={{ x: 350, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <Correction />
+          </motion.div>
+        );
 
       case "Сеанс":
-        return <Session />;
+        return (
+          <motion.div
+            initial={{ x: 350, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <Session />
+          </motion.div>
+        );
+
+      case "Место":
+        return (
+          <motion.div
+            initial={{ x: 350, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <Place />
+          </motion.div>
+        );
 
       default:
         return [];
@@ -77,7 +126,7 @@ const Workflow = () => {
     <motion.div
       initial={{ y: 500, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeOut", duration: 0.7 }}
+      transition={{ ease: "easeOut", duration: 0.6 }}
       viewport={{ once: true }}
     >
       <Subtitle>
@@ -133,6 +182,7 @@ const Container = styled.div`
 const List = styled.ul`
   list-style: none;
   display: flex;
+  padding: 0;
 `;
 const Item = styled.li`
   margin-right: 30px;
@@ -149,9 +199,6 @@ const ListButton = styled.button`
   color: rgba(0, 0, 0, 0.5);
   &:hover {
     cursor: pointer;
-  }
-  &:active {
-    color: red;
   }
 `;
 const ListButtonActive = styled(ListButton)`

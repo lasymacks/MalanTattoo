@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { SynteticEvent } from "../myWorks/myWorks";
 
 interface IButton {
   text: string;
   style?: string;
+  onClick: (e: SynteticEvent<HTMLDivElement>) => void;
 }
 
-const Button = ({ text, style }: IButton) => {
+const Button = ({ text, style, onClick }: IButton) => {
   const Container = styled.div`
     position: relative;
     ${style}
@@ -23,6 +25,7 @@ const Button = ({ text, style }: IButton) => {
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
+    z-index: 10;
     cursor: pointer;
   `;
   const SecondBorder = styled.div`
@@ -46,8 +49,8 @@ const Button = ({ text, style }: IButton) => {
 
   return (
     <Container>
-      <Button >{text}</Button>
-      <SecondBorder></SecondBorder>
+      <Button>{text}</Button>
+      <SecondBorder onClick={(e) => onClick(e)}></SecondBorder>
     </Container>
   );
 };

@@ -75,7 +75,7 @@ const Important = () => {
     <motion.div
       initial={{ y: 500, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeOut", duration: 0.7 }}
+      transition={{ ease: "easeOut", duration: 0.6 }}
       viewport={{ once: true }}
     >
       <Subtitle>
@@ -167,7 +167,7 @@ const Important = () => {
               <Button
                 text="Записаться"
                 style={"align-self: center;"}
-                // style={"left: 50%; transform: translateX(-25%); vertical-align: bottom;"}
+                onClick={() => {}}
               />
             </ContentContainer>
           </ImportantItemContainer>

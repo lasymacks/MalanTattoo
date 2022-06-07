@@ -14,6 +14,7 @@ const App = () => {
     margin: 0 auto;
     max-width: 1440px;
     box-shadow: 5px 5px 5px #e5e5e5, -5px -5px 5px #e5e5e5;
+    position: relative;
   `;
 
   return (
