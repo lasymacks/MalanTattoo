@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SynteticEvent } from "../myWorks/myWorks";
+import { SynteticEvent } from "../../Pages/myWorks/myWorks";
 
 interface IButton {
   text: string;

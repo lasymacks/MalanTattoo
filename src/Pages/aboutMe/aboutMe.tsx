@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Subtitle from "../subtitle";
-import Wrapper from "../wrapper";
+import Subtitle from "../../Components/subtitle";
+import Wrapper from "../../Components/wrapper";
 import { motion } from "framer-motion";
 
 const AboutMe = () => {
@@ -28,7 +28,7 @@ const AboutMe = () => {
   const Img = styled.img`
     margin-right: 35px;
   `;
-  const BackgroundImg = styled.img `
+  const BackgroundImg = styled.img`
     position: absolute;
     z-index: -1;
     left: -145px;

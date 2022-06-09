@@ -1,9 +1,9 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import Button from "../button";
-import Title from "../title";
-import Wrapper from "../wrapper";
 import { motion } from "framer-motion";
+import Wrapper from "../../Components/wrapper";
+import Title from "../../Components/title";
+import Button from "../../Components/button";
 
 const PresentationBlock = () => {
   const firstAnimation = keyframes`

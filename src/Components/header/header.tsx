@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = () => {
@@ -21,7 +22,7 @@ const Header = () => {
     line-height: 24px;
   `;
 
-  const Link = styled.a`
+  const LinkItem = styled.a`
     color: #fff;
     transition: color 0.1s ease-in-out;
     &:hover {
@@ -37,44 +38,46 @@ const Header = () => {
       <Nav className="header-container__nav-menu">
         <List className="header-container__nav-menu__list">
           <Item className="header-container__nav-menu__list__item">
-            <Link
-              className="header-container__nav-menu__list__item__link"
-              href="#"
-            >
-              Обо мне
+            <Link to="/aboutMe">
+              <LinkItem
+                className="header-container__nav-menu__list__item__link"
+                href="#"
+              >
+                Обо мне
+              </LinkItem>
             </Link>
           </Item>
           <Item className="header-container__nav-menu__list__item">
-            <Link
+            <LinkItem
               className="header-container__nav-menu__list__item__link"
               href="#"
             >
               Работы
-            </Link>
+            </LinkItem>
           </Item>
           <Item className="header-container__nav-menu__list__item">
-            <Link
+            <LinkItem
               className="header-container__nav-menu__list__item__link"
               href="#"
             >
               Цены
-            </Link>
+            </LinkItem>
           </Item>
           <Item className="header-container__nav-menu__list__item">
-            <Link
+            <LinkItem
               className="header-container__nav-menu__list__item__link"
               href="#"
             >
               Важное
-            </Link>
+            </LinkItem>
           </Item>
           <Item className="header-container__nav-menu__list__item">
-            <Link
+            <LinkItem
               className="header-container__nav-menu__list__item__link"
               href="#"
             >
               Контакты
-            </Link>
+            </LinkItem>
           </Item>
         </List>
       </Nav>

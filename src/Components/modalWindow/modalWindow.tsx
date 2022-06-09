@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect } from "react";
 import styled, { CSSProperties } from "styled-components";
+import { SynteticEvent } from "../../Pages/myWorks/myWorks";
 import Button from "../button";
-import { SynteticEvent } from "../myWorks/myWorks";
 
 interface IModalWindow {
   children?: ReactNode;

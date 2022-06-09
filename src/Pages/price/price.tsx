@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
-import Accordion from "../accordion/accordion";
-import Subtitle from "../subtitle";
-import Wrapper from "../wrapper";
+import Accordion from "../../Components/accordion";
+import Subtitle from "../../Components/subtitle";
+import Wrapper from "../../Components/wrapper";
 
 const Price = () => {
   const BlueText = styled.span`

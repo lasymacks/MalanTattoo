@@ -1,13 +1,14 @@
 import React from "react";
 import Header from "../header";
-import PresentationBlock from "../presentationBlock";
+import PresentationBlock from "../../Pages/presentationBlock";
 import styled from "styled-components";
-import AboutMe from "../aboutMe";
-import MyWorks from "../myWorks";
-import Certificate from "../certificate";
-import Important from "../important";
-import Price from "../price";
-import Workflow from "../workflow";
+import AboutMe from "../../Pages/aboutMe";
+import MyWorks from "../../Pages/myWorks";
+import Certificate from "../../Pages/certificate";
+import Important from "../../Pages/important";
+import Price from "../../Pages/price";
+import Workflow from "../../Pages/workflow";
+import { Route, Routes } from "react-router";
 
 const App = () => {
   const Container = styled.div`
@@ -20,8 +21,13 @@ const App = () => {
   return (
     <Container>
       <Header />
-      <PresentationBlock />
-      <AboutMe />
+      <Routes>
+        <Route path="/aboutMe" element={<AboutMe />} />
+      </Routes>
+      <Routes>
+        <Route path="/" element={<PresentationBlock />} />
+      </Routes>
+
       <MyWorks />
       <Certificate />
       <Workflow />

@@ -1,8 +1,9 @@
 import React from "react";
-import Subtitle from "../subtitle";
-import Wrapper from "../wrapper";
+
+import Wrapper from "../../Components/wrapper";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import Subtitle from "../../Components/subtitle";
 
 const Certificate = () => {
   return (
@@ -22,27 +23,20 @@ const Certificate = () => {
         <Wrapper>
           <CertificateBody>
             <TextWrapper>
-              <p>Привет, я Полина, твой тату-мастер.</p>
-              <p>
-                Мой опыт в создании тату - 3 года. Я работаю в уютной и
-                комфортной студии у метро Обводный канал.
-              </p>
-              <p>Мои работы - маленькие украшения на всю жизнь.</p>
-              <p>
-                Я с большой любовью сделаю иллюстрацию на вашем теле, надпись
-                своим почерком или шрифтом Брайля.
-              </p>
-              <p>
-                Для своих тату я выбираю черный пигмент и грейвош, исключением
-                могут стать красный и синий.
-              </p>
-              <p>Я не повторяю свои эскизы и не делаю копии чужих работ.</p>
-              <p>
-                Всегда смогу по референсам создать эскиз, в котором будут
-                отражены мой стиль и частичка вас.
-              </p>
+              <Text>
+                У меня есть два варианта сертификатов - бумажный и электронный.
+              </Text>
+              <Text>
+                У каждого свои преимущества: бумажный выглядит как открытка, на
+                обратной стороне я всегда пишу пожелание от вас и пакую в
+                конверт, электронный сертификат - экологичный подарок.
+              </Text>
+              <Text>
+                Оба сертификаты именные, на них указаны мои контакты для связи.
+                Срок действия - 1 год (с момента приобретения).
+              </Text>
             </TextWrapper>
-            <BuyButton>Купить</BuyButton>
+            <BuyButton>Заказать</BuyButton>
           </CertificateBody>
         </Wrapper>
       </CertificateContainer>
@@ -80,6 +74,11 @@ const TextWrapper = styled.div`
   color: #fff;
   max-width: 680px;
 `;
+const Text = styled.p`
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+`;
 const CertificateBody = styled.div`
   display: flex;
   justify-content: space-between;
@@ -88,8 +87,8 @@ const BuyButton = styled.button`
   min-width: 340px;
   min-height: 340px;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 24px;
+  line-height: 29px;
   border: none;
   background-color: transparent;
   color: #fff;

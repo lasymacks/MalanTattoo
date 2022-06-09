@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import styled from "styled-components";
-import Consultation from "../consultation";
-import Correction from "../correction";
-import DesignDevelopment from "../designDevelopment";
-import Place from "../place";
-import Session from "../session";
-import Subtitle from "../subtitle";
-import Wrapper from "../wrapper";
+import Consultation from "../../Components/consultation";
+import Correction from "../../Components/correction";
+import DesignDevelopment from "../../Components/designDevelopment";
+import Place from "../../Components/place";
+import Session from "../../Components/session";
+import Subtitle from "../../Components/subtitle";
+import Wrapper from "../../Components/wrapper";
 
 interface SynteticEvent<T> {
   currentTarget: EventTarget & T;

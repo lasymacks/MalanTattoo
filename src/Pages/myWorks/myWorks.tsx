@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Subtitle from "../subtitle";
+import Subtitle from "../../Components/subtitle";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import Carousel from "../carousel";
-import Wrapper from "../wrapper";
-import Button from "../button";
-import modalWindow from "../modalWindow";
-import ModalWindow from "../modalWindow";
 import { createPortal } from "react-dom";
+import Wrapper from "../../Components/wrapper";
+import Carousel from "../../Components/carousel";
+import ModalWindow from "../../Components/modalWindow";
+import Button from "../../Components/button";
 
 export interface SynteticEvent<T> {
   currentTarget: EventTarget & T;

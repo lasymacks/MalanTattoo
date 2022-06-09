@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../button";
-import Subtitle from "../subtitle";
-import Wrapper from "../wrapper";
+
 import { motion } from "framer-motion";
+import Subtitle from "../../Components/subtitle";
+import Wrapper from "../../Components/wrapper";
+import Button from "../../Components/button";
 
 const Important = () => {
   const BlueText = styled.span`
@@ -82,7 +83,7 @@ const Important = () => {
         <IndentedWord>IMPORTANT</IndentedWord> IMPORTANT IM TANT{" "}
         <BlueText>IMPORTANT</BlueText> IMPORTAN
       </Subtitle>
-      <Wrapper style={'margin-bottom: 150px;'}>
+      <Wrapper style={"margin-bottom: 150px;"}>
         <div>
           <ImportantItemContainer>
             <FirstImg src={require("./img/first.png")}></FirstImg>
